@@ -7,7 +7,7 @@ use App\Suscripcion;
 class SuscripcionController extends Controller
 {
     public function index(){
-        $dat= Suscripcion::all();
+        $dat= Suscripcion::where('tipo','=','1')->get();
         return view('biowellBolivia.suscripcion.listar', compact('dat'));
     }
     public function indexSuscripcion(){
@@ -17,6 +17,7 @@ class SuscripcionController extends Controller
     public function store(Request $request){
         $datos = new Suscripcion;
         $datos->email = $request->email;
+        $datos->tipo = '1';
         $datos->save();
 
       return redirect('/listar-suscripcion')->with('success', 'correcto');

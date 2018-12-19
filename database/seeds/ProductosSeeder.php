@@ -39,6 +39,7 @@ class ProductosSeeder extends Seeder
             ',
             'soporte' => '',
             'imagen' => '1.jpg',
+            'codigo' => '1'
         ]);
         Productos::Create([
             'nombre' => 'Sensor Sputnik',
@@ -68,6 +69,7 @@ class ProductosSeeder extends Seeder
             ',
             'soporte' => '',
             'imagen' => '2.jpg',
+            'codigo' => '1'
         ]);
         Productos::Create([
             'nombre' => 'Unidad de calibracion',
@@ -93,6 +95,7 @@ class ProductosSeeder extends Seeder
             ',
             'soporte' => '',
             'imagen' => '3.jpg',
+            'codigo' => '1'
         ]);
     }
 }

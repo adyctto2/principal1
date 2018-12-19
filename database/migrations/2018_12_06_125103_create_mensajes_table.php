@@ -22,6 +22,7 @@ class CreateMensajesTable extends Migration
             $table->string('mensaje');
             $table->integer('estado');
             $table->date('fecha');
+            $table->integer('tipo');
         });
     }
 

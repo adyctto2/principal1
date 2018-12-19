@@ -7,7 +7,7 @@ use App\Productos;
 class ProductoController extends Controller
 {
     public function index(){
-        $dat= Productos::all();
+        $dat= Productos::where('codigo','=','1')->get();
         return view('biowellBolivia.productos.listar', compact('dat'));
     }
     public function indexProducto(){
@@ -25,13 +25,14 @@ class ProductoController extends Controller
         $productos = new Productos;
         $productos->nombre = $request->nombre;
         $productos->costo = $request->costo;
-        $productos->descripcion = $request->descripcion;
-        $productos->tecnologia = $request->tecnologia;
-        $productos->caracteristicas = $request->caracteristicas;
-        $productos->beneficios = $request->beneficios;
-        $productos->especificaciones = $request->especificaciones;
-        $productos->soporte = $request->soporte;
+        $productos->descripcion = $request->descripcion."";
+        $productos->tecnologia = $request->tecnologia."";
+        $productos->caracteristicas = $request->caracteristicas."";
+        $productos->beneficios = $request->beneficios."";
+        $productos->especificaciones = $request->especificaciones."";
+        $productos->soporte = $request->soporte."";
         $productos->imagen = $imagen;
+        $productos->codigo = '1';
         $productos->save();
 
       return redirect('/listar')->with('success', 'correcto');
@@ -56,7 +57,7 @@ class ProductoController extends Controller
         $name = '';
         if($datos->hasfile('imagen'))
           {
-            $file = $request->file('imagen');
+            $file = $datos->file('imagen');
             $name=time().$file->getClientOriginalName();
             $file->move(public_path().'/img/producto/', $name);
             $name = $_SERVER["HTTP_HOST"]."/img/producto/".$name;
@@ -66,12 +67,12 @@ class ProductoController extends Controller
           }
         $dt->nombre = $datos->nombre;
         $dt->costo = $datos->costo;
-        $dt->descripcion = $datos->descripcion;
-        $dt->tecnologia = $datos->tecnologia;
-        $dt->caracteristicas = $datos->caracteristicas;
-        $dt->beneficios = $datos->beneficios;
-        $dt->especificaciones = $datos->especificaciones;
-        $dt->soporte = $datos->soporte;
+        $dt->descripcion = $datos->descripcion."";
+        $dt->tecnologia = $datos->tecnologia."";
+        $dt->caracteristicas = $datos->caracteristicas."";
+        $dt->beneficios = $datos->beneficios."";
+        $dt->especificaciones = $datos->especificaciones."";
+        $dt->soporte = $datos->soporte."";
         $dt->imagen = $name;
         $dt->save();
         return redirect('/listar')->with('success', 'actualizado');

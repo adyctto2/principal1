@@ -24,6 +24,7 @@ class CreateProductosTable extends Migration
             $table->text('especificaciones');
             $table->text('soporte');
             $table->string('imagen');
+            $table->integer('codigo');
             $table->timestamps();
         });
     }

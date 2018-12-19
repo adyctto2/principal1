@@ -21,6 +21,7 @@ class CreateTestimoniosTable extends Migration
             $table->date('fecha');
             $table->text('testimonio');
             $table->unsignedInteger('id_producto');
+            $table->integer('tipo');
             $table->foreign('id_producto')->references('id')->on('productos');
             $table->timestamps();
         });

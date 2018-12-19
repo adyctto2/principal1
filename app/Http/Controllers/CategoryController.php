@@ -31,6 +31,7 @@ class CategoryController extends Controller
     public function store(Request $request){
         $productos = new Category;
         $productos->nombre_cat = $request->nombre_cat;
+        $productos->tipo = "1";
         $productos->save();
         return redirect('/listar-categorias')->with('success', 'creado');
     }

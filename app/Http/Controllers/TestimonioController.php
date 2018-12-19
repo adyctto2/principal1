@@ -8,7 +8,7 @@ use DateTime;
 class TestimonioController extends Controller
 {
     public function index(){
-        $dat= Testimonio::all();
+        $dat= Testimonio::where('tipo','=','1')->get();
         return view('biowellBolivia.testimonios.listar', compact('dat'));
     }
     public function indexTestimonio(){
@@ -32,6 +32,7 @@ class TestimonioController extends Controller
         $productos->id_producto = $request->id_producto;
         $productos->imagen = $imagen;
         $productos->fecha = $dt;
+        $productos->tipo = '1';
         $productos->save();
 
       return redirect('/listar-testimonio')->with('success', 'correcto');

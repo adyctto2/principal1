@@ -1,7 +1,7 @@
 @extends('layouts.biowell')
 @section('contenidoBiowell')
-<h1>Actualizar producto</h1>
-    <form action="{{route('crearP')}}" method="post" enctype="multipart/form-data">
+<h1>Crear producto</h1>
+    <form action="{{route('crearProducto')}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="form-group">
             <label for="nombre">Nombre del producto</label>

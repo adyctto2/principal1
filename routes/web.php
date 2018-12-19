@@ -28,7 +28,7 @@ Route::get('administrar/quantumCenter','quantumCenterController@index')->name('q
 
 Route::get('listar','ProductoController@index')->name('listar');
 Route::get('crear-producto','ProductoController@indexProducto')->name('cp');
-Route::post('crearP','ProductoController@store')->name('crearP');
+Route::post('crearProducto','ProductoController@store')->name('crearProducto');
 
 Route::get('ver-producto/{id}','ProductoController@verProducto')->name('vp');
 Route::delete('borrarProd/{id}', 'ProductoController@destroy')->name('borrarp');

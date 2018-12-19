@@ -14,16 +14,16 @@ class DatabaseSeeder extends Seeder
       $this->truncateTables([
           'testimonios',
           'productos',
-          'servicios',
           'p_imagenes',
-          'eventos'
+          'eventos',
+          'servicios'
       ]);
          $this->call(UsersSeeder::class);
          $this->call(ProductosSeeder::class);
         $this->call(TestimoniosSeeder::class);
-        $this->call(ServiciosSeeder::class);
         $this->call(PimagenesSeeder::class);
         $this->call(EventoSeeder::class);
+        $this->call(ServicioSeeder::class);
     }
     public function truncateTables(array $tables)
     {

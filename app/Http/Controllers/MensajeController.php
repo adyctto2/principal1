@@ -7,7 +7,7 @@ use App\Mensaje;
 class MensajeController extends Controller
 {
     public function index(){
-        $datos = Mensaje::all();
+        $datos = Mensaje::where('tipo','=','1')->get();
         return view('biowellBolivia.mensajes.listar',compact('datos'));
     }
     public function ver(Mensaje $id){

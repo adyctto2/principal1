@@ -16,6 +16,7 @@ class CreateSuscripcionesTable extends Migration
         Schema::create('suscripcions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('email');
+            $table->integer('tipo');
             $table->timestamps();
         });
     }
